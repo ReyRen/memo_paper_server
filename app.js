@@ -65,6 +65,7 @@ app.use('/addrecord', require('./routes/addrecord.js'));
 app.use('/modify', require('./routes/modify.js'));
 app.use('/detail', require('./routes/detail.js'));
 app.use('/api/delete_record', require('./api/delete_record.js'));
+app.use('/api/details_record', require('./api/details_record.js'));
 
 app.get('/404', function(req, res, next){
   next();
