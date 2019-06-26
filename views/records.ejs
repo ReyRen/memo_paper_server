@@ -40,7 +40,7 @@
 							<td><%=record.date.toLocaleString() %></td>
 							<td>
 								<a style="display:none"><%=record.id %></a>
-								<a href="/detail" class="layui-btn layui-btn-mini details">detail</a>
+								<a href="/detail?id=<%=record.id %>" class="layui-btn layui-btn-mini details">detail</a>
 								<a style="display:none"><%=record.id %></a>
 								<a href="/modify" class="layui-btn layui-btn-mini">modify</a>
 								<a style="display:none"><%=record.id %></a>
@@ -119,19 +119,6 @@
 			var that = this;
 			var index = layer.tips('只想提示地精准些', that,{tips: [1, 'white']});
 			$('#layui-layer'+index).children('div.layui-layer-content').css('color','#000000');
-		});
-
-		$('.details').on('click', function() {
-			id = $(this).prev().html();
-			console.log(id)
-			$.ajax({
-			url:"/api/details_record",
-			success: function(result){
-				console.log(result);
-			}
-			type: "POST",
-			data: {id: id},
-			})
 		});
 
 		$('.delete').on('click', function() {
